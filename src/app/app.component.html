@@ -1,0 +1,35 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+
+      <input #myuser type="text" class="form-control" [placeholder]="CreateUser">
+      <br />
+      <input #phno type="text" class="form-control" [placeholder]="Phoneno">
+      <button class="btn btn-danger mt-3" (click)="onclick(myuser, phno)">Create User</button>
+
+
+      <table class="table table-bordered mt-3">
+        <thead class="thead-light">
+          <tr>
+            <th>Sr.No</th>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Delete User</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of userlist; index as userno">
+            <td>{{userno + 1}}</td>
+            <td>{{item}}</td>
+            <td>{{phoneNumber[userno]}}</td>
+            <td>
+              <button (click)="ondelete(userno)" class="btn btn-success">Remove User</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+    </div>
+  </div>
+</div>
